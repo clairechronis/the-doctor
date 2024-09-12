@@ -1,0 +1,104 @@
+<html>
+
+<head>
+	<title>The Doctor</title>
+	<style type="text/css">
+		@font-face {
+			font-family: Cooper;
+			src: url("COOPBL.TTF") format("truetype");
+		}
+
+		body {
+			font-family: Cooper;
+			background-color: f3f2fb;
+		}
+
+		table {
+			position: relative;
+			margin: auto auto;
+		}
+
+		th,
+		td {
+			padding: 25px;
+		}
+
+		th,
+		td {
+			border: 2px solid rgb(226, 86, 59);
+		}
+
+		table,
+		th,
+		td,
+		tr {
+			border-collapse: collapse;
+			text-align: center;
+		}
+
+		p,
+		table {
+			font-size: 35pt;
+		}
+
+		p {
+			margin-top: 100px;
+			text-align: center;
+		}
+	</style>
+	<script type="text/javascript">
+		function setScoreByCol(col, score) {
+			document.getElementById(`col-${col}-score`).innerHTML = score;
+		}
+
+		function setScoreByName(name, score) {
+			const elems = document.getElementsByClassName("name");
+
+			let col = 1;
+			for (const elem of elems) {
+				if (name == elem.innerHTML) {
+					break;
+				}
+				++col;
+			}
+
+			if (col > elems.length) {
+				console.log(col);
+				return;
+			}
+
+			setScoreByCol(col, score);
+		}
+	</script>
+</head>
+
+<body>
+	<p>
+		<img src="doctor.png" width="70%" />
+		<br>
+		<br>
+		Scoreboard
+		<br>
+		<br>
+	<table>
+		<tr>
+			<th class="name">Biniam</th>
+			<th class="name">Leanne</th>
+			<th class="name">Gabrus</th>
+			<th class="name">Robby</th>
+			<th class="name">Carl</th>
+		</tr>
+		<tr>
+			<td id="col-1-score">0</td>
+			<td id="col-2-score">40</td>
+			<td id="col-3-score">0</td>
+			<td id="col-4-score">0</td>
+			<td id="col-5-score">0</td>
+		</tr>
+		</tr>
+	</table>
+
+	</p>
+</body>
+
+</html>
